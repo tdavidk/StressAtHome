@@ -20,7 +20,7 @@ public class ScoreBoard : MonoBehaviour
 
     IEnumerator Start()
     {
-        WWW itemsData = new WWW("http://localhost:8888/kuliah/Pengembangan%20Game%20Online/StudyAtHome/leader_board.php");
+        WWW itemsData = new WWW("https://stressathome.000webhostapp.com/api/leader_board.php");
         yield return itemsData;
         items = itemsData.text.Split(';');
         rank1.text = "1. " + GetDataValue(items[0], "Nama:");
