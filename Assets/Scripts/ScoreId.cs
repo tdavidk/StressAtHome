@@ -6,7 +6,7 @@ public class ScoreId : MonoBehaviour
 {
     IEnumerator Start()
     {
-        WWW scoreUser = new WWW("https://stressathome.000webhostapp.com/api/detail_score_username.php");
+        WWW scoreUser = new WWW("https://stressathomegame.000webhostapp.com/api/detail_score_username.php");
         yield return scoreUser;
         Debug.Log("score user " + scoreUser);
     }

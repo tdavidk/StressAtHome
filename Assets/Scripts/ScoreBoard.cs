@@ -20,7 +20,7 @@ public class ScoreBoard : MonoBehaviour
 
     IEnumerator Start()
     {
-        WWW itemsData = new WWW("https://stressathome.000webhostapp.com/api/leader_board.php");
+        WWW itemsData = new WWW("https://stressathomegame.000webhostapp.com/api/leader_board.php");
         yield return itemsData;
         items = itemsData.text.Split(';');
         rank1.text = "1. " + GetDataValue(items[0], "Nama:");
@@ -37,7 +37,7 @@ public class ScoreBoard : MonoBehaviour
 
     string GetDataValue(string data, string index)
     {
-        string value = data.Substring(data.IndexOf(index) + index.Length);
+        string value = data.Substring(data.IndexOf(index) , index.Length);
         if (value.Contains("&")) value = value.Remove(value.IndexOf("&"));
         return value;
     }

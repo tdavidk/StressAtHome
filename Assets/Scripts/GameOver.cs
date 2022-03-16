@@ -10,7 +10,7 @@ public class GameOver : MonoBehaviour
     public GameObject scoreTextGame;
     public Text scoreText;
 
-    private string url = "https://stressathome.000webhostapp.com/api/update_score.php";
+    private string url = "https://stressathomegame.000webhostapp.com/api/update_score.php";
     WWWForm form;
 
     // Update is called once per frame

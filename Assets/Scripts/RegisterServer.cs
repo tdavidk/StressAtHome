@@ -15,8 +15,8 @@ public class RegisterServer : MonoBehaviour
     [SerializeField] Button registerButton;
 
     public GameObject errorMassagePanel;
-    private string url = "https://stressathome.000webhostapp.com/api/register.php";
-    private string scoreId = "https://stressathome.000webhostapp.com/api/detail_score_username.php";
+    private string url = "https://stressathomegame.000webhostapp.com/api/register.php";
+    private string scoreId = "https://stressathomegame.000webhostapp.com/api/detail_score_username.php";
     WWWForm form;
     WWWForm formUsername;
 
@@ -67,24 +67,25 @@ public class RegisterServer : MonoBehaviour
                 }
                 else
                 {
-                    WWW wScoreId = new WWW(scoreId, formUsername);
-                    yield return wScoreId;
-                    if (wScoreId.error != null)
-                    {
-                        errorMassagePanel.SetActive(true);
-                        Debug.Log("<color=red>" + wScoreId.text + "</color>");//error
-                    }
-                    else
-                    {
-                        Debug.Log("WSCOREID " + wScoreId.ToString());
-                        Debug.Log("<color=green>" + wScoreId.text + "</color>");//user exist
-                    }
+                    //WWW wScoreId = new WWW(scoreId, formUsername);
+                    //yield return wScoreId;
+                    //if (wScoreId.error != null)
+                    //{
+                    //    errorMassagePanel.SetActive(true);
+                    //    Debug.Log("<color=red>" + wScoreId.text + "</color>");//error
+                    //}
+                    //else
+                    //{
+                    //    Debug.Log("WSCOREID " + wScoreId.ToString());
+                    //    Debug.Log("<color=green>" + wScoreId.text + "</color>");//user exist
+                    //}
+
                     //open welcom panel
                     //welcomePanel.SetActive(true);
                     user = username.text;
                     errorMessages.text = "";
                     PlayerPrefs.SetString("username", username.text);
-                    PlayerPrefs.SetInt("score_history", int.Parse(wScoreId.text));
+                    PlayerPrefs.SetInt("score_history", 0);
                     Debug.Log("<color=green>" + w.text + "</color>");
                     SceneManager.LoadScene("MainMenu");
                 }

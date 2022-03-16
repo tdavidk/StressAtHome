@@ -14,8 +14,8 @@ public class LoginServer : MonoBehaviour
     [SerializeField] Button loginButton;
 
     public GameObject errorMassagePanel;
-    private string url = "https://stressathome.000webhostapp.com/api/login.php";
-    private string scoreId = "https://stressathome.000webhostapp.com/api/detail_score_username.php";
+    private string url = "https://stressathomegame.000webhostapp.com/api/login.php";
+    private string scoreId = "https://stressathomegame.000webhostapp.com/api/detail_score_username.php";
     WWWForm form;
     WWWForm formUsername;
 
